@@ -462,7 +462,7 @@ class Reference
       switch keys.length
         when 0 # name -> undefined/null
           return
-        when 1 
+        when 1
           field = {name: keys[0], value: field[keys[0]]}
         else
           throw "Quick-add mode expects exactly one name -> value mapping, found #{JSON.stringify(field)} (#{(new Error()).stack})"
