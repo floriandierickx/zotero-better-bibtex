@@ -375,10 +375,10 @@ doExport = ->
 
     switch item.__type__
       when 'report', 'thesis'
-        ref.add({ name: 'institution', value: item.institution || item.publisher || item.university, enc: 'literal' })
+        ref.add({ name: 'institution', value: item.institution || item.publisher || item.university, enc: 'literal', preserveBibTeXVariables: true })
 
       when 'case', 'hearing', 'legal_case'
-        ref.add({ name: 'institution', value: item.court, enc: 'literal' })
+        ref.add({ name: 'institution', value: item.court, enc: 'literal', preserveBibTeXVariables: true })
 
       else
         ref.add({ name: 'publisher', value: item.publisher, enc: 'literal' })

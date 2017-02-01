@@ -150,7 +150,7 @@ doExport = ->
 
     switch item.__type__
       when 'thesis' then ref.add({ school: item.publisher })
-      when 'report' then ref.add({ institution: item.institution || item.publisher })
+      when 'report' then ref.add({ institution: item.institution || item.publisher, preserveBibTeXVariables: true })
       else               ref.add({ name: 'publisher', value: item.publisher, enc: 'literal' })
 
     if item.__type__ == 'thesis' && item.thesisType in ['mastersthesis', 'phdthesis']
