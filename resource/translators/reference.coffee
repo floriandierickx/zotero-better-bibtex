@@ -474,8 +474,9 @@ class Reference
     if ! field.bibtex
       Translator.debug('add:', {
         field
-        preserve: Translator.preserveBibTeXVariables
-        match: @isBibVar(field.value)
+        preserveEnbled: Translator.preserveBibTeXVariables
+        potentiallyBibVar: @isBibVar(field.value),
+        isBibVar: field.preserveBibTeXVariables && @isBibVar(field.value),
       })
       if typeof field.value == 'number' || (field.preserveBibTeXVariables && @isBibVar(field.value))
         value = '' + field.value
