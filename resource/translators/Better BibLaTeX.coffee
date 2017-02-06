@@ -381,7 +381,7 @@ doExport = ->
         ref.add({ name: 'institution', value: item.court, enc: 'literal', preserveBibTeXVariables: true })
 
       else
-        ref.add({ name: 'publisher', value: item.publisher, enc: 'literal' })
+        ref.add({ name: 'publisher', value: item.publisher, enc: 'literal', preserveBibTeXVariables: true })
 
     switch item.__type__
       when 'letter', 'personal_communication' then ref.add({ name: 'type', value: item.letterType || 'Letter', caseConversion: true, replace: true })

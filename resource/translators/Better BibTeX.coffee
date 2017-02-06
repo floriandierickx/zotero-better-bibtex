@@ -1,6 +1,6 @@
 Translator.fieldMap = {
   # Zotero          BibTeX
-  place:            { name: 'address', import: 'location' }
+  place:            { name: 'address', import: 'location', preserveBibTeXVariables: true }
   section:          { name: 'chapter' }
   edition:          { name: 'edition' }
   type:             { name: 'type' }
@@ -151,7 +151,7 @@ doExport = ->
     switch item.__type__
       when 'thesis' then ref.add({ school: item.publisher })
       when 'report' then ref.add({ name: 'institution', value: item.institution || item.publisher, preserveBibTeXVariables: true })
-      else               ref.add({ name: 'publisher', value: item.publisher, enc: 'literal' })
+      else               ref.add({ name: 'publisher', value: item.publisher, enc: 'literal', preserveBibTeXVariables: true })
 
     if item.__type__ == 'thesis' && item.thesisType in ['mastersthesis', 'phdthesis']
       ref.referencetype = item.thesisType
