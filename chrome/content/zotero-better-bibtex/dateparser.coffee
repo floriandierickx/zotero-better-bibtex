@@ -200,6 +200,14 @@ class Zotero.BetterBibTeX.DateParser
         repubdate.origdate = origdate
         return repubdate
 
+    # date parsing bites
+    if m = @source.match(/^(-?[0-9]{3,4)-([0-9]{1,2})$/)
+      return {
+        type: 'Date'
+        year: parseInt(m[1])
+        month: parseInt(m[2])
+      }
+
     # Disabled in xpi.yml until the port to 5.0 is finished -- Zotero standalone is build on FF 39 (!!) for linux, and EDTF doesn't
     # run there.
     if Zotero.BetterBibTeX.EDTF
