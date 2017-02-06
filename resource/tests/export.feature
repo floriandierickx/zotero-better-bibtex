@@ -53,6 +53,7 @@ Scenario Outline: BibLaTeX Export
      | condense in cite key format not working #308                                                   | 1           |
      | csquotes #302                                                                                  | 2           |
      | italics in title - capitalization #541                                                         | 1           |
+# must wait for fidus parser
 #     | EDTF dates in BibLaTeX #590                                                                    | 14          |
 
 @test-cluster-1 @bblt-1 @bblt @435 @293 @381 @113
@@ -62,6 +63,7 @@ Scenario Outline: BibLaTeX Export
 
   Examples:
      | file                                                                               | references  |
+     | Better BibLaTeX.022                                                                | 1           |
      | Math parts in title #113                                                           | 1           |
      | CSL title, volume-title, container-title=BL title, booktitle, maintitle #381       | 2           |
      | Better BibLaTeX.019                                                                | 1           |
@@ -94,13 +96,12 @@ Scenario Outline: BibLaTeX Export
      | underscores in URL fields should not be escaped #104                               | 1           |
      | Shortjournal does not get exported to biblatex format #102 - biblatexcitekey #105  | 1           |
      | Better BibLaTeX.023                                                                | 1           |
-     | Better BibLaTeX.022                                                                | 1           |
      | Better BibLaTeX.021                                                                | 1           |
      | Better BibLaTeX.020                                                                | 1           |
      | Better BibLaTeX.017                                                                | 1           |
      | Better BibLaTeX.016                                                                | 1           |
      | Better BibLaTeX.015                                                                | 1           |
-     | Better BibLaTeX.014                                                                | 1           | must wait for fidus parser
+     | Better BibLaTeX.014                                                                | 1           |
      | Better BibLaTeX.013                                                                | 1           |
      | Better BibLaTeX.012                                                                | 1           |
      | Better BibLaTeX.011                                                                | 1           |
