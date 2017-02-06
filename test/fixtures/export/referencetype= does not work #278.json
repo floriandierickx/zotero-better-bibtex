@@ -14,7 +14,7 @@
       "rawImports": false,
       "DOIandURL": "both",
       "attachmentsNoMetadata": false,
-      "preserveBibTeXVariables": true
+      "preserveBibTeXVariables": false
     },
     "options": {
       "exportFileData": false,
