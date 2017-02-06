@@ -55,13 +55,14 @@ Scenario Outline: BibLaTeX Export
      | italics in title - capitalization #541                                                         | 1           |
 #     | EDTF dates in BibLaTeX #590                                                                    | 14          |
 
-@test-cluster-1 @bblt-1 @bblt @435 @293 @381
+@test-cluster-1 @bblt-1 @bblt @435 @293 @381 @113
 Scenario Outline: BibLaTeX Export
   And I import <references> references from 'export/<file>.json'
   Then a library export using 'Better BibLaTeX' should match 'export/<file>.biblatex'
 
   Examples:
      | file                                                                               | references  |
+     | Math parts in title #113                                                           | 1           |
      | CSL title, volume-title, container-title=BL title, booktitle, maintitle #381       | 2           |
      | Better BibLaTeX.019                                                                | 1           |
      | Extra semicolon in biblatexadata causes export failure #133                        | 2           |
@@ -88,7 +89,6 @@ Scenario Outline: BibLaTeX Export
      | HTML Fragment separator escaped in url #140 #147                                   | 1           |
      | Export Newspaper Article misses section field #132                                 | 1           |
      | Exporting of single-field author lacks braces #130                                 | 1           |
-     | Math parts in title #113                                                           | 1           |
      | Hang on non-file attachment export #112 - URL export broken #114                   | 2           |
      | DOI with underscores in extra field #108                                           | 1           |
      | underscores in URL fields should not be escaped #104                               | 1           |
