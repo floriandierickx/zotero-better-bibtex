@@ -201,8 +201,7 @@ class Zotero.BetterBibTeX.DateParser
         return repubdate
 
     # date parsing bites
-    Zotero.BetterBibTeX.debug('dateparser:', @source, @source.match(/^(-?[0-9]{3,4)-([0-9]{1,2})$/))
-    if m = @source.match(/^(-?[0-9]{3,4)-([0-9]{1,2})$/)
+    if m = @source.match(/^(-?[0-9]{3,4})-([0-9]{1,2})$/)
       return {
         type: 'Date'
         year: parseInt(m[1])
