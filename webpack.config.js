@@ -49,6 +49,7 @@ var common = {
   },
   resolveLoader: {
     alias: {
+      'nearley-loader': path.join(__dirname, './webpack/nearley-loader'),
       'pegjs-loader': path.join(__dirname, './webpack/pegjs-loader'),
       'json-loader': path.join(__dirname, './webpack/json-loader'),
     },
@@ -57,12 +58,14 @@ var common = {
     rules: [
       { test: /\.coffee$/, use: [ {loader: 'coffee-loader', options: { sourceMap: false } } ] },
       { test: /\.pegjs$/, use: [ 'pegjs-loader' ] },
+      { test: /\.ne$/, use: [ 'nearley-loader' ] },
       { test: /\.json$/, use: [ 'json-loader' ] },
     ]
   },
 }
 
 module.exports = [
+/*
   // main app logic
   _.merge({}, common, {
     plugins: [
@@ -111,7 +114,7 @@ module.exports = [
       pathinfo: true,
     },
   }),
-
+*/
   // minitests
   _.merge({}, common, {
     context: path.resolve(__dirname, './minitests'),
@@ -119,6 +122,7 @@ module.exports = [
       'pfunc': './pfunc.coffee',
       'dateparser': './dateparser.coffee',
       'text2latex': './text2latex.coffee',
+      'parser': './parser.coffee',
     },
     output: {
       path: path.resolve(__dirname, './minitests/build'),

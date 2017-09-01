@@ -53,6 +53,8 @@
     "ignore-loader": "^0.1.2",
     "jsesc": "^2.5.1",
     "lodash": "^4.17.4",
+    "nearley": "^2.11.0",
+    "nearley-there": "^1.0.0",
     "node-archiver": "^0.3.0",
     "pretty-data": "^0.40.0",
     "pug": "^2.0.0-rc.3",
